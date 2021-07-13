@@ -1,5 +1,9 @@
+import React from 'react';
+
+import BoxList from './BoxList';
+
 import './App.css';
-import BoxList from "."
+
 
 function App() {
   return (
