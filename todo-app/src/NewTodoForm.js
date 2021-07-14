@@ -21,6 +21,7 @@ const NewTodoForm = ({ addItem }) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label htmlFor="text">
+				text:{" "}
 				<input
 					type="text"
 					name="text"

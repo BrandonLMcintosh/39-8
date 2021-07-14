@@ -31,36 +31,26 @@ const NewBoxForm = ({ height = 10, width = 10, color = "black", addBox }) => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
-				<label htmlFor="height">
-					Height (px):{" "}
-					<input
-						type="number"
-						name="height"
-						placeholder="10"
-						value={formData.height}
-						onChange={handleChange}
-					/>
-				</label>
+				<label htmlFor="height">Height (px): </label>
+				<input
+					type="number"
+					name="height"
+					placeholder="10"
+					value={formData.height}
+					onChange={handleChange}
+				/>
 
-				<label htmlFor="width">
-					Width (px):{" "}
-					<input
-						type="number"
-						name="width"
-						placeholder="10"
-						value={formData.width}
-						onChange={handleChange}
-					/>
-				</label>
+				<label htmlFor="width">Width (px): </label>
+				<input type="number" name="width" placeholder="10" value={formData.width} onChange={handleChange} />
 
-				<label htmlFor="color">
-					Color:{" "}
-					<select name="color" value={formData.color} onChange={handleChange}>
-						{colors.map((color) => (
-							<option value={color}>{color}</option>
-						))}
-					</select>
-				</label>
+				<label htmlFor="color">Color: </label>
+				<select name="color" value={formData.color} onChange={handleChange}>
+					{colors.map((color) => (
+						<option value={color} key={uuid()}>
+							{color}
+						</option>
+					))}
+				</select>
 
 				<button>Add it!</button>
 			</form>
