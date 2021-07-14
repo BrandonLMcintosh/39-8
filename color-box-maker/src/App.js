@@ -1,14 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import BoxList from './BoxList';
+import BoxList from "./BoxList";
 
-import './App.css';
-
+import "./App.css";
 
 function App() {
-  return (
-    <BoxList />
-  );
+	return <BoxList />;
 }
 
 export default App;
