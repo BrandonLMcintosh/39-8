@@ -28,6 +28,7 @@ const NewTodoForm = ({ addItem }) => {
 					value={formData.text}
 					onChange={handleChange}
 					placeholder="enter todo here"
+					id="text"
 				></input>
 			</label>
 			<button>Add!</button>

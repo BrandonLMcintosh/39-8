@@ -4,7 +4,16 @@ import { v4 as uuid } from "uuid";
 
 import "./NewBoxForm.css";
 
-const colors = ["blue", "green", "yellow", "red", "purple", "orange", "magenta", "black"];
+const colors = [
+	"blue",
+	"green",
+	"yellow",
+	"red",
+	"purple",
+	"orange",
+	"magenta",
+	"black",
+];
 
 const NewBoxForm = ({ height = 10, width = 10, color = "black", addBox }) => {
 	const INITIAL_STATE = {
@@ -38,13 +47,25 @@ const NewBoxForm = ({ height = 10, width = 10, color = "black", addBox }) => {
 					placeholder="10"
 					value={formData.height}
 					onChange={handleChange}
+					id="width"
 				/>
 
 				<label htmlFor="width">Width (px): </label>
-				<input type="number" name="width" placeholder="10" value={formData.width} onChange={handleChange} />
+				<input
+					type="number"
+					name="width"
+					placeholder="10"
+					value={formData.width}
+					onChange={handleChange}
+					id="width"
+				/>
 
 				<label htmlFor="color">Color: </label>
-				<select name="color" value={formData.color} onChange={handleChange}>
+				<select
+					name="color"
+					value={formData.color}
+					onChange={handleChange}
+				>
 					{colors.map((color) => (
 						<option value={color} key={uuid()}>
 							{color}

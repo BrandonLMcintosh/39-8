@@ -1,5 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import BoxList from "./BoxList";
 
 it("renders without crashing", () => {
@@ -22,7 +23,11 @@ it("should add new item", () => {
 });
 
 it("should remove item", () => {
-	const { queryByText } = render(<BoxList />);
+	const { queryByText, getByLabelText } = render(<BoxList />);
+	const input = getByLabelText("Width (px):");
+	const addButton = queryByText("Add it!");
+	fireEvent.change(input, { target: { value: "300" } });
+	fireEvent.click(addButton);
 	const button = queryByText("X");
 	expect(queryByText("X")).toBeInTheDocument();
 	fireEvent.click(button);

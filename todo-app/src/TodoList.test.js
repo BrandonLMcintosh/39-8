@@ -1,5 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import TodoList from "./TodoList";
 
 it("renders without crashing", () => {
@@ -13,7 +14,7 @@ it("matches snapshot", () => {
 
 it("should add new item", () => {
 	const { queryByText, getByLabelText } = render(<TodoList />);
-	const input = getByLabelText("text");
+	const input = getByLabelText("text:");
 	const button = queryByText("Add!");
 	expect(queryByText("test1")).not.toBeInTheDocument();
 	fireEvent.change(input, { target: { value: "test1" } });
@@ -22,7 +23,11 @@ it("should add new item", () => {
 });
 
 it("should remove item", () => {
-	const { queryByText } = render(<TodoList />);
+	const { queryByText, getByLabelText } = render(<TodoList />);
+	const input = getByLabelText("text:");
+	const addButton = queryByText("Add!");
+	fireEvent.change(input, { target: { value: "test1" } });
+	fireEvent.click(addButton);
 	const button = queryByText("X");
 	expect(queryByText("test1")).toBeInTheDocument();
 	fireEvent.click(button);

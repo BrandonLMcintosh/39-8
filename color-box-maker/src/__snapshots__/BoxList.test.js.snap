@@ -13,6 +13,7 @@ exports[`matches snapshot 1`] = `
           Height (px): 
         </label>
         <input
+          id="width"
           name="height"
           placeholder="10"
           type="number"
@@ -24,6 +25,7 @@ exports[`matches snapshot 1`] = `
           Width (px): 
         </label>
         <input
+          id="width"
           name="width"
           placeholder="10"
           type="number"
